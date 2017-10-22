@@ -3,7 +3,7 @@
   "license": "MIT",
   "scripts": {
     "watch": "cd elm && chokidar '**/*.elm' -c 'elm make Main.elm --output ../dist/js/app.js' --initial",
-    "server": "node server.js"
+    "server": "node server.js & npm run watch"
   },
   "dependencies": {
     "express": "^4.16.2"

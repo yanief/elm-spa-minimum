@@ -18,10 +18,12 @@ onSimpleClick message =
 
 preventDefault2 : Decoder Bool
 preventDefault2 =
-    Json.Decode.map2
+    Json.Decode.map4
         (invertedOr)
         (Json.Decode.field "ctrlKey" Json.Decode.bool)
         (Json.Decode.field "metaKey" Json.Decode.bool)
+        (Json.Decode.field "altKey" Json.Decode.bool)
+        (Json.Decode.field "shiftKey" Json.Decode.bool)
 
 
 maybePreventDefault : msg -> Bool -> Decoder msg
@@ -34,9 +36,9 @@ maybePreventDefault msg preventDefault =
             Json.Decode.fail "Normal link"
 
 
-invertedOr : Bool -> Bool -> Bool
-invertedOr x y =
-    not (x || y)
+invertedOr : Bool -> Bool -> Bool -> Bool -> Bool
+invertedOr a b c d =
+    not (a || b || c || d)
 
 
 onClickPage : String -> List (Attribute Msg)

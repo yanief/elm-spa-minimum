@@ -19,7 +19,4 @@ Inside the folder, you can start the simple server by running:
 npm run server
 ```
 
-To run chokidar to run `elm make` everytime any elm files change:
-```bash
-npm run watch
-```
+This app uses chokidar and `elm make` will run any time it detects changes on any elm files
