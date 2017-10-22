@@ -12,6 +12,13 @@ To run this app:
 ```bash
 git clone https://github.com/yanief/elm-spa-minimum.git 
 cd elm-spa-minimum
+npm install
+cd elm
+elm-package install
+# you will be prompted to install, press y
+# or if you just want to approve the plan, run this instead:
+#    elm-package install -y
+cd ..
 ```
 
 Inside the folder, you can start the simple server by running:
