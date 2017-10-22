@@ -1,0 +1,14 @@
+{
+  "repository": {},
+  "license": "MIT",
+  "scripts": {
+    "watch": "cd elm && chokidar '**/*.elm' -c 'elm make Main.elm --output ../dist/js/app.js' --initial",
+    "server": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.16.2"
+  },
+  "devDependencies": {
+    "chokidar-cli": "^1.2.0"
+  }
+}
